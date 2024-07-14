@@ -16,3 +16,5 @@ http://localhost:1338/
 PS C:\react\graphql-full-course\client> npx create-react-app .
 Delete yarn.lock
 PS C:\react\graphql-full-course\client> npm install
+PS C:\react\graphql-full-course\client> npm start
+http://localhost:3000/
