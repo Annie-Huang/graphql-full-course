@@ -4,7 +4,6 @@ const typeDefs = gql`
   type User {
     id: ID!
     name: String!
-    email: String!
     username: String!
     age: Int!
     nationality: Nationality!
@@ -26,18 +25,22 @@ const typeDefs = gql`
     movie(name: String!): Movie!
   }
 
+  input CreateUserInput {
+    name: String!
+    username: String!
+    age: Int!
+    nationality: Nationality = BRAZIL
+  }
+
   input UpdateUsernameInput {
     id: ID!
     newUsername: String!
   }
-  # Add the 'newEmail' field to the input.
-  input UpdateEmailInput {
-    id: ID!
-  }
 
   type Mutation {
+    createUser(input: CreateUserInput!): User
     updateUsername(input: UpdateUsernameInput!): User
-    # Add a mutation field called 'updateEmail'. It should return a User.
+    deleteUser(id: ID!): User
   }
 
   enum Nationality {
