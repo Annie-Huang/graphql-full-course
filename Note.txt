@@ -11,3 +11,4 @@ PS C:\react\graphql-full-course\server> npm install lodash
 PS C:\react\graphql-full-course\server> npm run start
 http://localhost:1338/
 
+PS C:\react\graphql-full-course\client> npx create-react-app .
