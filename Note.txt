@@ -5,3 +5,6 @@ https://github.com/Annie-Huang/graphql-full-course
 
 Start from lab5, where is got all the server side setup.
 ------------------------------------------------------------------------------
+
+PS C:\react\graphql-full-course\server> npm install
+
