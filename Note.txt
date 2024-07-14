@@ -4,6 +4,8 @@ https://github.com/machadop1407/graphql-full-course/tree/lab6
 https://github.com/Annie-Huang/graphql-full-course
 
 Start from lab6, where is got all the server side setup.
+
+https://www.apollographql.com/docs/react/
 ------------------------------------------------------------------------------
 
 PS C:\react\graphql-full-course\server> npm install
@@ -12,3 +14,5 @@ PS C:\react\graphql-full-course\server> npm run start
 http://localhost:1338/
 
 PS C:\react\graphql-full-course\client> npx create-react-app .
+Delete yarn.lock
+PS C:\react\graphql-full-course\client> npm install
