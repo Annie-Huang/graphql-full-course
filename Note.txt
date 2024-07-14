@@ -3,4 +3,5 @@ Learn GraphQL in 4 Hours - From Beginner to Expert (https://www.youtube.com/watc
 https://github.com/machadop1407/graphql-full-course/tree/lab5/client
 https://github.com/Annie-Huang/graphql-full-course
 
+Start from lab5, where is got all the server side setup.
 ------------------------------------------------------------------------------
