@@ -7,6 +7,7 @@ Start from lab6, where is got all the server side setup.
 ------------------------------------------------------------------------------
 
 PS C:\react\graphql-full-course\server> npm install
+PS C:\react\graphql-full-course\server> npm install lodash
 PS C:\react\graphql-full-course\server> npm run start
 http://localhost:4000/
 
