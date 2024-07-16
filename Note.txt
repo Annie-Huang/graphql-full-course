@@ -18,3 +18,4 @@ Delete yarn.lock
 PS C:\react\graphql-full-course\client> npm install
 PS C:\react\graphql-full-course\client> npm start
 http://localhost:3000/
+PS C:\react\graphql-full-course\client> npm install @apollo/client
