@@ -49,7 +49,7 @@ const DisplayData = () => {
   const [age, setAge] = React.useState(0);
   const [nationality, setNationality] = React.useState('');
 
-  const { loading, error, data } = useQuery(QUERY_ALL_USERS);
+  const { loading, error, data, refetch } = useQuery(QUERY_ALL_USERS);
   const { data: movieData } = useQuery(QUERY_ALL_MOVIES);
 
   const [createUser] = useMutation(CREATE_USER_MUTATION);
@@ -99,15 +99,19 @@ const DisplayData = () => {
           onChange={(e) => setNationality(e.target.value.toUpperCase())}
         />
         <button
-          onClick={() =>
+          onClick={() => {
             createUser({
               variables: { input: { name, username, age, nationality } },
-            })
-          }
+            });
+
+            refetch();
+          }}
         >
           Create User
         </button>
       </div>
+      <hr />
+
       {data &&
         data.users.map((user, index) => {
           return (
@@ -119,10 +123,12 @@ const DisplayData = () => {
             </div>
           );
         })}
+      <hr />
       {movieData &&
         movieData.movies.map((movie, index) => {
           return <h1 key={index}>Movie Name: {movie.name}</h1>;
         })}
+      <hr />
 
       <div>
         {/* You can enter 'Interstellar' into input field and try. Remember need to case match */}
