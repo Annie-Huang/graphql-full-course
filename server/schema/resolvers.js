@@ -1,5 +1,5 @@
-const { UserList, MovieList } = require("../FakeData");
-const _ = require("lodash");
+const { UserList, MovieList } = require('../FakeData');
+const _ = require('lodash');
 
 const resolvers = {
   Query: {
@@ -7,6 +7,7 @@ const resolvers = {
     users: () => {
       return UserList;
     },
+    // there are 4 input: parent, args, context, info
     user: (parent, args) => {
       const id = args.id;
       const user = _.find(UserList, { id: Number(id) });

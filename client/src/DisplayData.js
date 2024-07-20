@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery, useLazyQuery, gql, useMutation } from '@apollo/client';
 
 const QUERY_ALL_USERS = gql`
@@ -44,10 +44,10 @@ const DisplayData = () => {
   const [movieSearched, setMovieSearched] = React.useState('');
 
   // Create User States
-  const [name, setName] = React.useState('');
-  const [username, setUsername] = React.useState('');
-  const [age, setAge] = React.useState(0);
-  const [nationality, setNationality] = React.useState('');
+  const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
+  const [age, setAge] = useState(0);
+  const [nationality, setNationality] = useState('');
 
   const { loading, error, data, refetch } = useQuery(QUERY_ALL_USERS);
   const { data: movieData } = useQuery(QUERY_ALL_MOVIES);
