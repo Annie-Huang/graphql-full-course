@@ -4,7 +4,9 @@ const _ = require('lodash');
 const resolvers = {
   Query: {
     // USER RESOLVERS
-    users: () => {
+    // users: () => {
+    users: (parent, args, context) => {
+      console.log('context=', context.req.headers);
       return UserList;
     },
     // there are 4 input: parent, args, context, info
@@ -25,7 +27,9 @@ const resolvers = {
     },
   },
   User: {
-    favoriteMovies: () => {
+    // favoriteMovies: () => {
+    favoriteMovies: (parent) => {
+      console.log('parent=', parent);
       return _.filter(
         MovieList,
         (movie) =>
