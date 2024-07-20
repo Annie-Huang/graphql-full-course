@@ -33,6 +33,13 @@ const GET_MOVIE_BY_NAME = gql`
 
 const DisplayData = () => {
   const [movieSearched, setMovieSearched] = React.useState('');
+
+  // Create User States
+  const [name, setName] = React.useState('');
+  const [username, setUsername] = React.useState('');
+  const [age, setAge] = React.useState(0);
+  const [nationality, setNationality] = React.useState('');
+
   const { loading, error, data } = useQuery(QUERY_ALL_USERS);
   const { data: movieData } = useQuery(QUERY_ALL_MOVIES);
   const [
@@ -58,6 +65,29 @@ const DisplayData = () => {
 
   return (
     <div>
+      <div>
+        <input
+          type='text'
+          placeholder='Name...'
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type='text'
+          placeholder='Username...'
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type='number'
+          placeholder='Age...'
+          onChange={(e) => setAge(e.target.value)}
+        />
+        <input
+          type='text'
+          placeholder='Nationality...'
+          onChange={(e) => setNationality(e.target.value.toUpperCase)}
+        />
+        <button>Create User</button>
+      </div>
       {data &&
         data.users.map((user, index) => {
           return (
