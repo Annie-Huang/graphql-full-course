@@ -10,6 +10,10 @@ const resolvers = {
       // info contains some request info but it is not exactly like request
       console.log('info=', info);
       return UserList;
+
+      // // If you do it with the union type:
+      // if (UserList) return { users: UserList };
+      // return { message: 'Yo, there was an error' };
     },
     // there are 4 input: parent, args, context, info
     user: (parent, args) => {
@@ -65,6 +69,20 @@ const resolvers = {
     deleteUser: (parent, args) => {
       const id = args.id;
       _.remove(UserList, (user) => user.id === Number(id));
+      return null;
+    },
+  },
+
+  UsersResult: {
+    __resolveType: (obj) => {
+      if (obj.users) {
+        return 'UsersSuccessfulResult';
+      }
+
+      if (obj.message) {
+        return 'UsersErrorResult';
+      }
+
       return null;
     },
   },

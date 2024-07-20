@@ -1,4 +1,4 @@
-const { gql } = require("apollo-server");
+const { gql } = require('apollo-server');
 
 const typeDefs = gql`
   type User {
@@ -20,6 +20,7 @@ const typeDefs = gql`
 
   type Query {
     users: [User!]!
+    #    users: UsersResult
     user(id: ID!): User!
     movies: [Movie!]!
     movie(name: String!): Movie!
@@ -51,6 +52,15 @@ const typeDefs = gql`
     CHILE
     UKRAINE
   }
+
+  # Industry standard is to pass both success and error message to the frontend.
+  type UsersSuccessfulResult {
+    users: [User!]!
+  }
+  type UsersErrorResult {
+    message: String!
+  }
+  union UsersResult = UsersSuccessfulResult | UsersErrorResult
 `;
 
 module.exports = { typeDefs };
