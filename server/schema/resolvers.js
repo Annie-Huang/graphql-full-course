@@ -5,8 +5,10 @@ const resolvers = {
   Query: {
     // USER RESOLVERS
     // users: () => {
-    users: (parent, args, context) => {
+    users: (parent, args, context, info) => {
       console.log('context=', context.req.headers);
+      // info contains some request info but it is not exactly like request
+      console.log('info=', info);
       return UserList;
     },
     // there are 4 input: parent, args, context, info
