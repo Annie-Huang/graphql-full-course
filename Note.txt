@@ -29,3 +29,7 @@ https://github.com/mguay22/react-apollo/blob/main/src/hooks/posts/useGetPosts.ts
     - From 'Best React Project Structure | TypeScript + Apollo Client + React Router' in youtube by Michael Guay
     - Look at app.component.tsx, home.page.tsx, posts-form.component.tsx, useCreatePost.ts
     - Syntax is very complicated and the author didn't explain it well why we need this.
+
+https://github.com/machadop1407/GraphQL-ApolloClient-Template/tree/main
+    - From 'GraphQL With React Tutorial - Apollo Client' in youtube by PedroTech
+    - https://github.com/Annie-Huang/GraphQL-ApolloClient-Template
