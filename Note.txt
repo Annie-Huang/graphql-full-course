@@ -33,3 +33,7 @@ https://github.com/mguay22/react-apollo/blob/main/src/hooks/posts/useGetPosts.ts
 https://github.com/machadop1407/GraphQL-ApolloClient-Template/tree/main
     - From 'GraphQL With React Tutorial - Apollo Client' in youtube by PedroTech
     - https://github.com/Annie-Huang/GraphQL-ApolloClient-Template
+
+Apollo Client Queries with React and Apollo Server (useQuery, useLazyQuery)
+    - https://www.youtube.com/watch?v=V8GVmy_Up0o&t=11s
+    - No source code provide
