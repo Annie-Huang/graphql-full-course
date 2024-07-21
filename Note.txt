@@ -8,6 +8,7 @@ Start from lab6, where is got all the server side setup.
 https://www.apollographql.com/docs/react/
 https://www.apollographql.com/docs/react/get-started/
 https://www.apollographql.com/docs/react/data/queries/#manual-execution-with-uselazyquery
+
 ------------------------------------------------------------------------------
 
 PS C:\react\graphql-full-course\server> npm install
@@ -21,3 +22,10 @@ PS C:\react\graphql-full-course\client> npm install
 PS C:\react\graphql-full-course\client> npm start
 http://localhost:3000/
 PS C:\react\graphql-full-course\client> npm install @apollo/client
+
+
+Other resource:
+https://github.com/mguay22/react-apollo/blob/main/src/hooks/posts/useGetPosts.ts
+    - From 'Best React Project Structure | TypeScript + Apollo Client + React Router' in youtube by Michael Guay
+    - Look at app.component.tsx, home.page.tsx, posts-form.component.tsx, useCreatePost.ts
+    - Syntax is very complicated and the author didn't explain it well why we need this.
