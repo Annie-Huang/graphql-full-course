@@ -35,5 +35,5 @@ https://github.com/machadop1407/GraphQL-ApolloClient-Template/tree/main
     - https://github.com/Annie-Huang/GraphQL-ApolloClient-Template
 
 Apollo Client Queries with React and Apollo Server (useQuery, useLazyQuery)
-    - https://www.youtube.com/watch?v=V8GVmy_Up0o&t=11s
-    - No source code provide
+    - https://www.youtube.com/watch?v=V8GVmy_Up0o
+    - https://github.com/Annie-Huang/graphql-apollo-client-queries
