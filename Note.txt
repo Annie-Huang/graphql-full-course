@@ -44,3 +44,5 @@ GraphQL Crash Course With Full Stack MERN Project (Traversy Media)
     - The ClientRow.jsx got method to refetchQueries or udpate cache.
     - The safely replace cache method when update id done in App.js's cache object
     - Good info about how to do mutation from a form: AddClientModal.jsx
+    - When finish deletion, move to another page through 'onCompleted: () => navigate('/'),' in DeleteButton.jsx
+    - Delete a client will also delete projects associated with the client: 'refetchQueries: [{ query: GET_CLIENTS }, { query: GET_PROJECTS }],' in ClientRow.jsx
