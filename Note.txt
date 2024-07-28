@@ -37,3 +37,10 @@ https://github.com/machadop1407/GraphQL-ApolloClient-Template/tree/main
 Apollo Client Queries with React and Apollo Server (useQuery, useLazyQuery)
     - https://www.youtube.com/watch?v=V8GVmy_Up0o
     - https://github.com/Annie-Huang/graphql-apollo-client-queries
+
+GraphQL Crash Course With Full Stack MERN Project (Traversy Media)
+    - https://www.youtube.com/watch?v=BcLNfwF04Kw
+    - https://github.com/Annie-Huang/project-mgmt-graphql-cloned
+    - The ClientRow.jsx got method to refetchQueries or udpate cache.
+    - The safely replace cache method when update id done in App.js's cache object
+    - Good info about how to do mutation from a form: AddClientModal.jsx
