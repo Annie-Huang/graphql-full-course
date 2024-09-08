@@ -46,3 +46,27 @@ GraphQL Crash Course With Full Stack MERN Project (Traversy Media)
     - Good info about how to do mutation from a form: AddClientModal.jsx
     - When finish deletion, move to another page through 'onCompleted: () => navigate('/'),' in DeleteButton.jsx
     - Delete a client will also delete projects associated with the client: 'refetchQueries: [{ query: GET_CLIENTS }, { query: GET_PROJECTS }],' in ClientRow.jsx
+
+Use cache.modify to update query after mutation with Apollo Client 3 (Wojciech Matuszewski)
+    - https://www.youtube.com/watch?v=PK1V0Vg8C5s
+    - const {data: messagesData, loading: messagesLoading, error: messagesError} = useQuery(MESSAGES_QUERY)
+      const [postMessage, {loading: postMessageLoading, error: postMessageError}] = useMutation(MESSAGES_MUTATION)
+      async function handleOnMessage(content: string) {
+        try {
+          await postMessage({
+            variables: { input: {content} }
+            update: (cache, {data}) => {    // data is the data return from the mutation.
+
+              // Before apollo client 3, you would use cache.readQuery(...) + cache.writeQuery(...) to update the data.
+              const cacheId = cache.indentify(data.message)     // Get the cache ID
+              cache.modify({
+                fields: {
+                  messages: (existingFieldData, { toReference }) => {
+                    return [...existingFieldData, toReference(cacheID)]
+                  }
+                }
+              })
+            }
+          })
+        }
+      }
