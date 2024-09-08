@@ -70,3 +70,37 @@ Use cache.modify to update query after mutation with Apollo Client 3 (Wojciech M
           })
         }
       }
+
+Apollo Client Mutations: Execute, Refetch, and Update Cache
+    - https://www.youtube.com/watch?v=u3DW549nNv0
+    - const [createFeed, {data, loading, error}] = useMutation(CREATE_LINK_MUTATION, {
+        update(cache, {data: {postAnyonymous}}) {
+
+          // Read the existing feed from the cache
+          const existingData = cache.readQuery<{feed: {links: Link[]}}>({
+            query: GET_FEED,
+            variables: {
+              sortBy: { createdAt: 'asc'},
+            }, // Ensure you include the variables
+          })
+
+          if(existingData && existingData.feed) {
+            // Update the cache with the new link
+            cache: writeQuery({
+              query: GET_FEED,
+              data: {
+                feed: {
+                  ...existingData.feed,
+                  links: [
+                    ...existingData.feed.links,
+                    postAnonymous,
+                  ]
+                }
+              },
+              variables: {
+                sortBy: { createdAt: 'asc'},
+              }, // Ensure you include the variables
+            });
+          }
+        }
+      });
