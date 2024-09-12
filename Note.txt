@@ -104,3 +104,40 @@ Apollo Client Mutations: Execute, Refetch, and Update Cache
           }
         }
       });
+
+Build: Updating your cache with Apollo Client (Apollo GraphQL)
+    - https://www.youtube.com/watch?v=ZhdGLMeXnvI
+    const [addTodo, {loading, error}] = useMutation(ADD_TODO, {
+      onCompleted: () => forRef.current.reset(),
+      update(cache, { data }) {
+        const { todos } = cache.readQuery({
+          query: LIST_TODOS
+        });
+
+        const.writeQuery({
+          query: LIST_TODOS,
+          data: {
+            todos: [
+              data.addTodo,
+              ...todos
+            ]
+          }
+        });
+      }
+    });
+    const [deleteTodo, {loading}] = useMutation(DELETE_TODO, {
+      variables: {id},
+      onError: (error) => alert(error.message),
+      update(cache, {data}) {   // data is the data coming back from the mutation call.
+        const { todos } = cache.readQuery({
+          query: LIST_TODOS
+        });
+
+        const.writeQuery({
+          query: LIST_TODOS,
+          data: {
+            todos: todos.filter(todo => todo.id !== data.deleteTodo.id)
+          }
+        });
+      }
+    });
